@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qr_scanner/screens/homeScreen.dart';
+
+import './screens/homeScreen.dart';
+import './screens/scannerScreen.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -12,6 +16,9 @@ class _MyAppState extends State<MyApp> {
       title: "QR Scanner",
       debugShowCheckedModeBanner: false,
       home: QRScanner(),
+      routes: {
+        ScannerScreen.routeName: (contxt) => ScannerScreen(),
+      },
     );
   }
 }
@@ -19,7 +26,9 @@ class _MyAppState extends State<MyApp> {
 class QRScanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: HomeScreen(),
+    );
   }
 }
 
